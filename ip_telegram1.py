@@ -3,8 +3,8 @@ import socket
 import re
 
 # 🔹 CONFIGURACIÓN
-BOT_TOKEN = "1267431784:AAE_kX2ovPmx7P6mP_eTCPuQS0marxbdWbk"  # Reemplázalo con tu token
-CHAT_ID = "540483105"  # Reemplázalo con tu ID de Telegram
+BOT_TOKEN = "XXXXXXX:AAE_kX2ovPmx7P6mP_eTCPuQS0marxbdWbk"  # Reemplázalo con tu token
+CHAT_ID = "540XXXXX"  # Reemplázalo con tu ID de Telegram
 
 # 🔹 Función para obtener la IP local de la Raspberry Pi
 def get_local_ip():
