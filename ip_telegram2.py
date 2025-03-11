@@ -7,7 +7,7 @@ import urllib.parse
 BOT_TOKEN = "XXXXX31784:AAE_kX2ovPmx7P6mP_eTCPuQS0marxbdWbk"  # Reemplázalo con tu token
 CHAT_ID = "540XXXXX"  # Reemplázalo con tu ID de Telegram
 
-# 🔹 Función para obtener la IP local de la Raspberry Pi
+# 🔹 Función para obtener la IP local
 def get_local_ip():
     try:
         s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -45,7 +45,7 @@ def escape_markdown(text):
 ip_local = escape_markdown(get_local_ip())
 ip_publica = escape_markdown(get_public_ip())
 
-mensaje = "📡 *IP de la Raspberry Pi*\n\n🌍 *Pública:* {0}\n🏠 *Local:* {1}".format(ip_publica, ip_local)
+mensaje = "📡 *IP *\n\n🌍 *Pública:* {0}\n🏠 *Local:* {1}".format(ip_publica, ip_local)
 
 # 🔹 Enviar mensaje por Telegram
 URL = "/bot{0}/sendMessage".format(BOT_TOKEN)
