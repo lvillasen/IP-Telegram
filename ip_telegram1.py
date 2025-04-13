@@ -1,21 +1,18 @@
 import requests
 import socket
 import re
+import netifaces
 
 # 🔹 CONFIGURACIÓN
-BOT_TOKEN = "XXXXXXX:AAE_kX2ovPmx7P6mP_eTCPuQS0marxbdWbk"  # Reemplázalo con tu token
-CHAT_ID = "540XXXXX"  # Reemplázalo con tu ID de Telegram
+BOT_TOKEN = "XXXX431784:AAE_kX2ovPmx7P6mP_eTCPuQS0marxbdWbk"  # Reemplázalo con tu token
+CHAT_ID = "XXXX83105"  # Reemplázalo con tu ID de Telegram
 
-# 🔹 Función para obtener la IP local 
-def get_local_ip():
+# 🔹 Función para obtener la IP local de una interfaz (eth0, wlan0, etc.)
+def get_ip(interface):
     try:
-        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-        s.connect(("8.8.8.8", 80))  # Google DNS
-        ip_local = s.getsockname()[0]
-        s.close()
-        return ip_local
+        return netifaces.ifaddresses(interface)[netifaces.AF_INET][0]['addr']
     except:
-        return "No se pudo obtener la IP local"
+        return "No disponible"
 
 # 🔹 Función para obtener la IP pública
 def get_public_ip():
@@ -30,10 +27,16 @@ def escape_markdown(text):
     return re.sub(f"([{re.escape(escape_chars)}])", r"\\\1", text)
 
 # 🔹 Obtener IPs y escapar caracteres
-ip_local = escape_markdown(get_local_ip())
+ip_eth0 = escape_markdown(get_ip("eth0"))
+ip_wlan0 = escape_markdown(get_ip("wlan0"))
 ip_publica = escape_markdown(get_public_ip())
 
-mensaje = f"📡 *IP *\n\n🌍 *Pública:* {ip_publica}\n🏠 *Local:* {ip_local}"
+mensaje = (
+    f"📡 *IP de la Raspberry Pi5*\n\n"
+    f"🌍 *Pública:* {ip_publica}\n"
+    f"🔌 *eth0:* {ip_eth0}\n"
+    f"📶 *wlan0:* {ip_wlan0}"
+)
 
 # 🔹 Enviar mensaje por Telegram
 URL = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
