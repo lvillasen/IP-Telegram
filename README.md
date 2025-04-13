@@ -1,6 +1,14 @@
 # IP-Telegram
 Send IP to Telegram Bot using Python
 
+## Usage
+Clonre repository
+
+### Install module neticaces with
+``` sudo apt update ```
+``` sudo apt install python3-netifaces ```
+
+
 ### Add to crontab -e
 ``` @reboot  sleep 60 && /usr/bin/python3 /home/user/ip_telegram1.py > /home/user/my-cron-log.txt ```
 
