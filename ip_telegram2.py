@@ -69,6 +69,4 @@ except Exception as e:
 finally:
     if conn:
         conn.close()
-^C
-root@rp-f01e55:~/Telegram# python3 ip_telegram2.py
-✅ Mensaje enviado con éxito.
+
