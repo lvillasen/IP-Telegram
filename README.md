@@ -6,6 +6,7 @@ Clonre repository
 
 ### Install module neticaces with
 ``` sudo apt update ```
+
 ``` sudo apt install python3-netifaces ```
 
 
