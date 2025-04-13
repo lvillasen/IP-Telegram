@@ -32,7 +32,7 @@ ip_wlan0 = escape_markdown(get_ip("wlan0"))
 ip_publica = escape_markdown(get_public_ip())
 
 mensaje = (
-    f"📡 *IP de la Raspberry Pi5*\n\n"
+    f"📡 *IP of your-computer-name*\n\n"
     f"🌍 *Pública:* {ip_publica}\n"
     f"🔌 *eth0:* {ip_eth0}\n"
     f"📶 *wlan0:* {ip_wlan0}"
