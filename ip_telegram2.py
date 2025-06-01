@@ -5,7 +5,7 @@ import urllib.parse
 import subprocess
 
 # 🔹 CONFIGURACIÓN
-BOT_TOKEN = "XXXXX31784:AAE_kX2ovPmx7P6mP_eTCPuQS0marxbdWbk"
+BOT_TOKEN = "XXXXXxbdWbk"
 CHAT_ID = "XXXXX3105"
 
 # 🔹 Función para obtener la IP de una interfaz como eth0 o wlan0
@@ -66,11 +66,11 @@ try:
     conn.request("GET", "{0}?{1}".format(URL, params))
     response = conn.getresponse()
     if response.status == 200:
-        print("✅ Mensaje enviado con éxito.")
+        print("Mensaje enviado con éxito.")
     else:
-        print("❌ Error al enviar el mensaje:", response.read().decode())
+        print("Error al enviar el mensaje:", response.read().decode())
 except Exception as e:
-    print("❌ Error:", e)
+    print("Error:", e)
 finally:
     if conn:
         conn.close()
