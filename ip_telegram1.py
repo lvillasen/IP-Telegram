@@ -4,7 +4,7 @@ import re
 import netifaces
 
 # 🔹 CONFIGURACIÓN
-BOT_TOKEN = "XXXX431784:AAE_kX2ovPmx7P6mP_eTCPuQS0marxbdWbk"  # Reemplázalo con tu token
+BOT_TOKEN = "XXXXbdWbk"  # Reemplázalo con tu token
 CHAT_ID = "XXXX83105"  # Reemplázalo con tu ID de Telegram
 
 # 🔹 Función para obtener la IP local de una interfaz (eth0, wlan0, etc.)
