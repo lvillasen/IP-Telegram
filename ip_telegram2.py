@@ -15,7 +15,9 @@ def get_ip(interface):
         for line in output.split("\n"):
             line = line.strip()
             if line.startswith("inet "):
-                return line.split()[1].split("/")[0]
+                ip = line.split()[1].split("/")[0]
+                if not ip.startswith("169.254."):
+                    return ip
         return "No disponible"
     except Exception as e:
         return "Error al obtener IP de {}: {}".format(interface, e)
